@@ -1,41 +1,67 @@
 import telnetlib
 from datetime import datetime
 import getpass
+import time
 
-username = input("Username: ")
-password = getpass.getpass("Password: ")
+username = input("Enter Username: ")
+password = getpass.getpass("Enter Password: ")
 
 devices = [
     {"ip": "192.168.1.10"},
-    
+    {"ip": "192.168.1.11"},
+]
+
+
+commands = [
+    "show config"
 ]
 
 def backup_device(device):
-    print(f"Connecting to {device['ip']}...")
+    ip = device["ip"]
+    print(f"\n Connecting to {ip}...")
 
     try:
-        tn = telnetlib.Telnet(device["ip"])
+               tn = telnetlib.Telnet(ip, timeout=5)
 
-        tn.read_until(b"Username:")
+    
+        tn.read_until(b"Username:", timeout=5)
         tn.write(username.encode('ascii') + b"\n")
 
-        tn.read_until(b"Password:")
+        tn.read_until(b"Password:", timeout=5)
         tn.write(password.encode('ascii') + b"\n")
 
-        tn.write(b"show config\n")   # change if needed
+        time.sleep(1)  
+
+        output = ""
+
+        for cmd in commands:
+            tn.write(cmd.encode('ascii') + b"\n")
+            time.sleep(2)  # wait for command output
+
+            cmd_output = tn.read_very_eager().decode('ascii', errors='ignore')
+            output += f"\n\n### {cmd} ###\n{cmd_output}"
+
+       
         tn.write(b"exit\n")
 
-        output = tn.read_all().decode('ascii')
+       
+        timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        filename = f"{ip}_{timestamp}.txt"
 
-        filename = f"{device['ip']}_{datetime.now().strftime('%Y-%m-%d')}.txt"
+        
+        with open(filename, "w") as file:
+            file.write(output)
 
-        with open(filename, "w") as f:
-            f.write(output)
+        print(f"Backup saved for {ip} → {filename}")
 
-        print(f"Backup saved for {device['ip']}")
+        tn.close()
 
     except Exception as e:
-        print(f"Error with {device['ip']}: {e}")
+        print(f" Error with {ip}: {e}")
+
+
 
 for device in devices:
     backup_device(device)
+
+print("\n All backups completed.")
