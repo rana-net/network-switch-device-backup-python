@@ -18,16 +18,6 @@ This project automates configuration backup of industrial network switches (Hirs
 - Hirschmann Industrial Ethernet Switches
 - Telnet-based CLI access
 
-## 📂 Project Structure
-network-device-backup/
-│
-- backup.py
-- devices.txt
-- backups/        
-- README.md
-- requirements.txt
-
-
 ## ▶️ How to Run
 ```bash
 python backup.py
