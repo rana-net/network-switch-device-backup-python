@@ -17,11 +17,11 @@ This project automates configuration backup of network devices using Python and 
 ## 📂 Project Structure
 network-device-backup/
 │
-├── backup.py
-├── devices.txt
-├── backups/        
-├── README.md
-├── requirements.txt
+- backup.py
+- devices.txt
+- backups/        
+- README.md
+- requirements.txt
 
 
 ## ▶️ How to Run
