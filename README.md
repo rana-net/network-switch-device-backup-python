@@ -29,17 +29,6 @@ This project was built and tested using Hirschmann industrial switches in a real
 
 ---
 
-# 📂 Project Structure
-
-```bash
-network-automation/
-│
-├── backup.py
-├── README.md
-├── backups/
-├── screenshots/
-└── requirements.txt
-```
 # ▶️ How to Run
 
 ## 1. Clone Repository
