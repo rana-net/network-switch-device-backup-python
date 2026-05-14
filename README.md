@@ -1,27 +1,98 @@
-# 🚀 Network Device Configuration Backup Tool
+# Network Configuration Backup Automation
 
-## 📌 Overview
-This project automates configuration backup of industrial network switches (Hirschmann) using Python and Telnet.
+A Python-based network automation project designed to back up configurations from industrial network switches and Telnet-enabled devices.
 
-## ⚙️ Features
-- Connects to multiple network devices
-- Executes configuration commands automatically
-- Saves backup files with timestamps
-- Reduces manual effort in network operations
+This project was built and tested using Hirschmann industrial switches in a real-world network environment.
 
-## 🛠️ Technologies Used
-- Python
-- Telnet (telnetlib)
-- CLI Automation
+---
 
-## 🏭 Device Type
-- Hirschmann Industrial Ethernet Switches
-- Telnet-based CLI access
+# 🚀 Features
 
-## ▶️ How to Run
+* Automated configuration backup
+* Supports Telnet-based devices
+* Handles non-standard industrial switch prompts
+* Saves timestamped backup files
+* Lightweight and dependency-free
+* Compatible with Python 3.13+
+* Real-world industrial network automation use case
+
+---
+
+# 🛠 Technologies Used
+
+* Python
+* Socket Programming
+* Network Automation
+* Telnet Protocol
+* Industrial Networking
+* Automation Scripting
+
+---
+
+# 📂 Project Structure
+
+```bash
+network-automation/
+│
+├── backup.py
+├── README.md
+├── backups/
+├── screenshots/
+└── requirements.txt
+```
+# ▶️ How to Run
+
+## 1. Clone Repository
+
+```bash
+git clone https://github.com/yourusername/network-automation.git
+cd network-automation
+```
+
+## 2. Run Script
+
 ```bash
 python backup.py
+```
+
+## 3. Enter Credentials
+
+```bash
+Username: admin
+Password: ********
+```
+
+## 4. Backup Files
+
+Generated backups will be stored inside:
+
+```bash
+/backups
+```
+
+---
+
+# 🧠 Real-World Challenges Solved
+
+This project handles:
+
+* Non-standard industrial switch prompts
+* Session timing issues
+* Manual CLI interaction
+* Output buffering problems
+* Full configuration capture
+* Telnet automation without deprecated libraries
 
 
-## ⚠️ Note
-Commands may vary depending on device OS/version.
+# 📈 Future Improvements
+
+* Multi-device backup using CSV
+* Parallel device execution
+* SSH support
+* Logging system
+* Automatic retry mechanism
+* Scheduled backups
+* Email notifications
+* Configuration comparison
+
+
