@@ -8,7 +8,7 @@ username = input("Username: ")
 password = getpass.getpass("Password: ")
 
 devices = [
-    {"ip": "192.168.2.11"},
+    {"ip": "192.x.x.x"},
 ]
 
 COMMAND = "show running-config script"
