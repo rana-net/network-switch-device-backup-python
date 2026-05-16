@@ -1,0 +1,4 @@
+# No external dependencies required
+# Compatible with Python >=3.13
+
+python>=3.13
