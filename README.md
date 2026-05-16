@@ -24,7 +24,7 @@ This project was built and tested using Hirschmann industrial switches in a real
 * Network Automation
 * Telnet Protocol
 * Industrial Networking
-* Automation Scripting
+
 
 ---
 
