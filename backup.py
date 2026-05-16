@@ -11,7 +11,7 @@ devices = [
     {"ip": "192.168.2.11"},
 ]
 
-COMMAND = "show running-config"
+COMMAND = "show running-config script"
 
 
 def read_data(sock, delay=2):
